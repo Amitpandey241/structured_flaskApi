@@ -76,3 +76,14 @@ def update_users_age(find, update):
 # up = {"$set":{"age":24}}
 # u = updatee(n,up)
 # print(u)
+def find_user_details(username,password):
+    try:
+        query_to_find_user_details = mongo.db.users.find_one({"username":username,"password":password},{"username":1,"password":1,"_id":0})
+        print(query_to_find_user_details)
+        return query_to_find_user_details
+    except Exception as e:
+        return str(e)
+
+# user_name = "Amit1"
+# password = "password"
+# find_user_details(user_name,password)
