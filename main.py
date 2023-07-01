@@ -1,10 +1,12 @@
-from app import app
+from app.userRegister.views import example_blueprint
 from flask import Blueprint
-from app.master.views import example_blueprint
-from logging import FileHandler,WARNING
+from flask_restful import Api
+from app import app
+
 
 app.register_blueprint(example_blueprint)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=True)
+    app.run(debug=True)
+
